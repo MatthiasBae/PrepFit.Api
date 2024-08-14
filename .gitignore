@@ -1,0 +1,18 @@
+# Ignore Visual Studio temporary files, build results, and
+# JetBrains Rider specific files
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+*.suo
+*.sln.ide
+*.sln.iml
+*.sln.idea_modules
+
+# Ignore build results
+bin/
+obj/
+
+# Ignore sensitive configuration files
+appsettings.*.json
+http-client.env.json

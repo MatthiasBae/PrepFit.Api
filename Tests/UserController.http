@@ -1,0 +1,50 @@
+@Api_HostAddress = https://{{host}}:{{port}}
+@User_Name = {{username}}
+@User_Mail = $random.email
+@User_Password = {{password}}
+@User_FirstName = "FirstName"
+@User_LastName = "LastName"
+
+@Confirm_Mail_Code = ""
+@Changed_User_Mail = ""
+
+POST {{Api_HostAddress}}/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Email": "{{User_Mail}}",
+  "Password": "{{User_Password}}"
+}
+
+###
+
+POST {{Api_HostAddress}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Email": "{{User_Mail}}",
+  "Password": "{{User_Password}}"
+}
+
+###
+
+POST {{Api_HostAddress}}/refresh
+Accept: application/json
+Content-Type: application/json
+
+{
+    "RefreshToken": "string"
+}
+
+###
+
+GET {{Api_HostAddress}}/confirmEmail?userId={{User_Name}}&code={{Confirm_Mail_Code}}&changedEmail={{Changed_User_Mail}}
+
+Accept: application/json
+Content-Type: application/json
+
+
+
+
